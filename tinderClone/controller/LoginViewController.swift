@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     //var signInMethod = String()
     struct GlobalVariable{
         static var signInMethod = String()
+        static var currentUserGender = String()
     }
     let databaseHelper = DatabaseHelper()
     let db = Firestore.firestore()
@@ -108,9 +109,10 @@ class LoginViewController: UIViewController {
                                         let data = doc.data()
                                         print(signInMethod)
 
-                                        if data["email"] as? String == Auth.auth().currentUser?.email{
+                                        if data["uid"] as? String == Auth.auth().currentUser?.uid{
                                             temp+=1
                                             print("user already Exists1")
+                                            LoginViewController.GlobalVariable.currentUserGender = (data["gender"] as? String)!
                                         }
                                         myGroup.leave()
                                     }
@@ -127,6 +129,8 @@ class LoginViewController: UIViewController {
                                 if temp == 1{
                                     //user is already registered
                                     print("Y")
+                                    let swipeVC = self.storyboard?.instantiateViewController(identifier: "SwipeScreenViewController") as? SwipeScreenViewController
+                                    self.navigationController?.pushViewController(swipeVC!, animated: true)
                                 }else if temp == 0{
                                     //its a new user and needs to register
                                     

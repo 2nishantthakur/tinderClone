@@ -16,6 +16,8 @@
 		84595A2B2480E8C400852C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84595A2A2480E8C400852C66 /* Assets.xcassets */; };
 		84595A2E2480E8C400852C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84595A2C2480E8C400852C66 /* LaunchScreen.storyboard */; };
 		84595A362480EB9E00852C66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84595A352480EB9E00852C66 /* LoginViewController.swift */; };
+		84A36AE524862F2B0035DD3E /* SwipeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */; };
+		84A36AE7248638D90035DD3E /* UsersShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36AE6248638D90035DD3E /* UsersShown.swift */; };
 		84BE9C6724812A3A0083DBAB /* ActualGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */; };
 		84BE9C6B2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6A2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift */; };
 		84BE9C6D248180600083DBAB /* PhoneNumberVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6C248180600083DBAB /* PhoneNumberVerificationViewController.swift */; };
@@ -37,6 +39,8 @@
 		84595A2D2480E8C400852C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84595A2F2480E8C400852C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84595A352480EB9E00852C66 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenViewController.swift; sourceTree = "<group>"; };
+		84A36AE6248638D90035DD3E /* UsersShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersShown.swift; sourceTree = "<group>"; };
 		84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualGradientButton.swift; sourceTree = "<group>"; };
 		84BE9C6A2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		84BE9C6C248180600083DBAB /* PhoneNumberVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberVerificationViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */,
 				84BE9C6F248186F80083DBAB /* UIViewControllerExtension.swift */,
 				84023FA924825043009705C5 /* DatabaseHelper.swift */,
+				84A36AE6248638D90035DD3E /* UsersShown.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				84BE9C6A2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift */,
 				84BE9C6C248180600083DBAB /* PhoneNumberVerificationViewController.swift */,
 				84023FA724824248009705C5 /* NewUserRegisterViewController.swift */,
+				84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 				84595A1F2480E8C200852C66 /* AppDelegate.swift in Sources */,
 				84BE9C6D248180600083DBAB /* PhoneNumberVerificationViewController.swift in Sources */,
 				84595A212480E8C200852C66 /* SceneDelegate.swift in Sources */,
+				84A36AE524862F2B0035DD3E /* SwipeScreenViewController.swift in Sources */,
+				84A36AE7248638D90035DD3E /* UsersShown.swift in Sources */,
 				84023FA824824248009705C5 /* NewUserRegisterViewController.swift in Sources */,
 				84BE9C6B2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift in Sources */,
 				84BE9C70248186F80083DBAB /* UIViewControllerExtension.swift in Sources */,

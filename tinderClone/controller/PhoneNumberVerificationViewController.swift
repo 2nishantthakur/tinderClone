@@ -14,6 +14,7 @@ import Firebase
 class PhoneNumberVerificationViewController: UIViewController {
 
     let databaseHelper = DatabaseHelper()
+    let db = Firestore.firestore()
     //var signInMethod = String()
     var verificationID = String()
     @IBOutlet var verificationNumberTF: SkyFloatingLabelTextField!
@@ -82,11 +83,64 @@ class PhoneNumberVerificationViewController: UIViewController {
                 LoginViewController.GlobalVariable.signInMethod = "phoneNumber"
                 //self.signInMethod = "phoneNumber"
                 print("Signed In")
-                self.databaseHelper.checkIfUserAlreadyExists()
-                let RegisterVC = self.storyboard?.instantiateViewController(withIdentifier: "NewUserRegisterViewController") as? NewUserRegisterViewController
-                self.navigationController?.pushViewController(RegisterVC!, animated: true)
-                print(LoginViewController.GlobalVariable.signInMethod)
-                print(Auth.auth().currentUser?.phoneNumber)
+                
+                
+                var temp = 0
+                let myGroup = DispatchGroup()
+                let signInMethod = LoginViewController.GlobalVariable.signInMethod
+                myGroup.enter()
+                self.db.collection("users").getDocuments { (querySnapshot, error) in
+                    if error != nil{
+                        print(error)
+
+                    }else{
+                        let snapshotDocuments = querySnapshot?.documents
+                        for doc in snapshotDocuments!{
+                            myGroup.enter()
+                            let data = doc.data()
+                            print(signInMethod)
+
+                            if data["uid"] as? String == Auth.auth().currentUser?.uid{
+                                temp+=1
+                                print("user already Exists!")
+                                LoginViewController.GlobalVariable.currentUserGender = (data["gender"] as? String)!
+                            }
+                            myGroup.leave()
+                        }
+                        
+                    }
+                    myGroup.leave()
+                }
+                
+                myGroup.notify(queue: .main, execute: {
+                    print(temp)
+                    
+                    //MARK:- user already exists or not
+                    
+                    if temp == 1{
+                        //user is already registered
+                        print("Y")
+                        let swipeVC = self.storyboard?.instantiateViewController(identifier: "SwipeScreenViewController") as? SwipeScreenViewController
+                        self.navigationController?.pushViewController(swipeVC!, animated: true)
+                        print(Auth.auth().currentUser?.uid)
+                    }else if temp == 0{
+                        //its a new user and needs to register
+                        
+                        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewUserRegisterViewController") as? NewUserRegisterViewController
+                        self.navigationController?.pushViewController(registerVC!, animated: true)
+                    }
+                })
+                
+                //self.signInMethod = "facebook"
+                print("signed in")
+                print(Auth.auth().currentUser?.email)
+                
+                
+//                self.databaseHelper.checkIfUserAlreadyExists()
+//                let RegisterVC = self.storyboard?.instantiateViewController(withIdentifier: "NewUserRegisterViewController") as? NewUserRegisterViewController
+//                self.navigationController?.pushViewController(RegisterVC!, animated: true)
+//                print(LoginViewController.GlobalVariable.signInMethod)
+//                print(Auth.auth().currentUser?.phoneNumber)
               // User is signed in
               // ...
             }

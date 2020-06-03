@@ -11,7 +11,7 @@ import SkyFloatingLabelTextField
 import Firebase
 
 class LoginWithPhoneNumberViewController: UIViewController {
-
+    
     @IBOutlet var phoneNumberTF: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +23,15 @@ class LoginWithPhoneNumberViewController: UIViewController {
     @IBAction func continut(_ sender: ActualGradientButton) {
         if phoneNumberTF.text != nil{
             PhoneAuthProvider.provider().verifyPhoneNumber("+91\(phoneNumberTF.text!)", uiDelegate: nil) { (verificationID, error) in
-              if let error = error {
-                print("+91\(self.phoneNumberTF.text!)")
-                print(error.localizedDescription)
-                return
-              }else{
-                print("Message Sent")
-                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
-                print(verificationID)
+                if let error = error {
+                    print("+91\(self.phoneNumberTF.text!)")
+                    print(error.localizedDescription)
+                    return
+                }else{
+                    print("Message Sent")
+                    UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                    let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+                    print(verificationID)
                 }
                 
                 let phoneNumberVerificationVC = self.storyboard?.instantiateViewController(withIdentifier: "PhoneNumberVerificationViewController") as? PhoneNumberVerificationViewController
@@ -42,27 +42,27 @@ class LoginWithPhoneNumberViewController: UIViewController {
                 }
                 
                 
-              // Sign in using the verificationID and the code sent to the user
-              // ...
+                // Sign in using the verificationID and the code sent to the user
+                // ...
             }
-           
+            
         }
         else{
-                       print("Enter a Phone Number!")
-                   }
+            print("Enter a Phone Number!")
+        }
     }
     @IBAction func back(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
