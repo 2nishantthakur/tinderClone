@@ -20,7 +20,6 @@ class SwipeScreenViewController: UIViewController {
     @IBOutlet var secondUserShownImage: UIImageView!
     @IBOutlet var secondUserShownName: UILabel!
     @IBOutlet var secondUserShownAge: UILabel!
-    @IBOutlet var SecondThumbView: UIImageView!
     
     var usersShown = [UsersShown]()
     let db = Firestore.firestore()
@@ -28,12 +27,14 @@ class SwipeScreenViewController: UIViewController {
     let myGroup = DispatchGroup()
     var image = UIImage()
     var shownUserIndex = 1
+    var currentUserLikes = [String: Int]()
     
     var users = [[String(), Int(), UIImage(), String()]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageShown.layer.cornerRadius = 10
+        secondUserShownImage.layer.cornerRadius = 10
         loadUsersToShow()
         dislikeButton.layer.cornerRadius = dislikeButton.frame.height/2
         likeButton.imageView?.layer.cornerRadius = dislikeButton.layer.cornerRadius
@@ -140,7 +141,8 @@ class SwipeScreenViewController: UIViewController {
             }else if card.center.x > (view.frame.width - 75){
                 myGroup.enter()
                 DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.6) {
+                    self.likeThisUser(UID: self.users[self.shownUserIndex][3] as! String, Name: self.users[self.shownUserIndex][0] as! String)
+                    UIView.animate(withDuration: 0.3) {
                         card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 60)
                         card.alpha = 0
                         self.myGroup.leave()

@@ -22,6 +22,7 @@
 		84BE9C6B2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6A2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift */; };
 		84BE9C6D248180600083DBAB /* PhoneNumberVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6C248180600083DBAB /* PhoneNumberVerificationViewController.swift */; };
 		84BE9C70248186F80083DBAB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6F248186F80083DBAB /* UIViewControllerExtension.swift */; };
+		84BF7A20248960A3000771CA /* SwipeScreenVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF7A1F248960A3000771CA /* SwipeScreenVCExtension.swift */; };
 		84FB9E222480FBA700134B6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FB9E212480FBA700134B6E /* GoogleService-Info.plist */; };
 		86DF0FD3E06B2A3FB8A39CBD /* Pods_tinderClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC605B58301952D080151A2 /* Pods_tinderClone.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		84BE9C6A2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		84BE9C6C248180600083DBAB /* PhoneNumberVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberVerificationViewController.swift; sourceTree = "<group>"; };
 		84BE9C6F248186F80083DBAB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		84BF7A1F248960A3000771CA /* SwipeScreenVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenVCExtension.swift; sourceTree = "<group>"; };
 		84FB9E212480FBA700134B6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A17F601CA72E3F4CF276E04 /* Pods-tinderClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinderClone.release.xcconfig"; path = "Target Support Files/Pods-tinderClone/Pods-tinderClone.release.xcconfig"; sourceTree = "<group>"; };
 		9FC605B58301952D080151A2 /* Pods_tinderClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tinderClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 				84BE9C6F248186F80083DBAB /* UIViewControllerExtension.swift */,
 				84023FA924825043009705C5 /* DatabaseHelper.swift */,
 				84A36AE6248638D90035DD3E /* UsersShown.swift */,
+				84BF7A1F248960A3000771CA /* SwipeScreenVCExtension.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				84BE9C70248186F80083DBAB /* UIViewControllerExtension.swift in Sources */,
 				84023FAA24825043009705C5 /* DatabaseHelper.swift in Sources */,
 				84BE9C6724812A3A0083DBAB /* ActualGradientButton.swift in Sources */,
+				84BF7A20248960A3000771CA /* SwipeScreenVCExtension.swift in Sources */,
 				84595A362480EB9E00852C66 /* LoginViewController.swift in Sources */,
 				84595A292480E8C200852C66 /* tinderClone.xcdatamodeld in Sources */,
 			);

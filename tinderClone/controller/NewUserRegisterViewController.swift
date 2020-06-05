@@ -111,6 +111,7 @@ class NewUserRegisterViewController: UIViewController ,UIImagePickerControllerDe
                         }else{
                             urlString = url!.absoluteString
                             self.updateImageURLToFirestore(urlString: urlString)
+                            
                         }
                     }
                 }
@@ -184,11 +185,12 @@ class NewUserRegisterViewController: UIViewController ,UIImagePickerControllerDe
 //                        }
                         self.db.collection("users").addDocument(data: ["name": self.name, "age": age, "gender": self.gender, "imageURL": self.imageURL, "uid": Auth.auth().currentUser?.uid]) { (error) in
                             if error != nil{
+                                print(error)
+                                
+                            }else{
                                 print("Successfully Added Data")
                                 let swipeVC = self.storyboard?.instantiateViewController(identifier: "SwipeScreenViewController") as? SwipeScreenViewController
                                 self.navigationController?.pushViewController(swipeVC!, animated: true)
-                            }else{
-                                print(error)
                             }
                         }
                         
