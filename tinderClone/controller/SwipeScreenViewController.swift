@@ -33,6 +33,7 @@ class SwipeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imageShown.layer.cornerRadius = 10
         secondUserShownImage.layer.cornerRadius = 10
         loadUsersToShow()
@@ -109,6 +110,8 @@ class SwipeScreenViewController: UIViewController {
     @IBAction func showProfile(_ sender: Any) {
     }
     @IBAction func chats(_ sender: Any) {
+        let chatsVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatsViewController") as? ChatsViewController
+        navigationController?.pushViewController(chatsVC!, animated: true)
     }
     
     @IBAction func swipeGesture(_ sender: UIPanGestureRecognizer) {

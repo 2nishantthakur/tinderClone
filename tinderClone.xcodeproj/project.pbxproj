@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		84023FA824824248009705C5 /* NewUserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84023FA724824248009705C5 /* NewUserRegisterViewController.swift */; };
 		84023FAA24825043009705C5 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84023FA924825043009705C5 /* DatabaseHelper.swift */; };
+		8442DAA3248B704600DF3DC0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442DAA2248B704600DF3DC0 /* ChatViewController.swift */; };
+		8442DAA6248B70CB00DF3DC0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442DAA4248B70CB00DF3DC0 /* MessageCell.swift */; };
+		8442DAA7248B70CB00DF3DC0 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8442DAA5248B70CB00DF3DC0 /* MessageCell.xib */; };
+		8442DAA9248B7B2800DF3DC0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442DAA8248B7B2800DF3DC0 /* Message.swift */; };
 		84595A1F2480E8C200852C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84595A1E2480E8C200852C66 /* AppDelegate.swift */; };
 		84595A212480E8C200852C66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84595A202480E8C200852C66 /* SceneDelegate.swift */; };
 		84595A262480E8C200852C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84595A242480E8C200852C66 /* Main.storyboard */; };
@@ -16,6 +20,9 @@
 		84595A2B2480E8C400852C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84595A2A2480E8C400852C66 /* Assets.xcassets */; };
 		84595A2E2480E8C400852C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84595A2C2480E8C400852C66 /* LaunchScreen.storyboard */; };
 		84595A362480EB9E00852C66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84595A352480EB9E00852C66 /* LoginViewController.swift */; };
+		845EA3CB248AB6030069E303 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3CA248AB6030069E303 /* ChatsViewController.swift */; };
+		845EA3D0248AB9DF0069E303 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3CE248AB9DF0069E303 /* ChatsTableViewCell.swift */; };
+		845EA3D1248AB9DF0069E303 /* ChatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EA3CF248AB9DF0069E303 /* ChatsTableViewCell.xib */; };
 		84A36AE524862F2B0035DD3E /* SwipeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */; };
 		84A36AE7248638D90035DD3E /* UsersShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36AE6248638D90035DD3E /* UsersShown.swift */; };
 		84BE9C6724812A3A0083DBAB /* ActualGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */; };
@@ -31,6 +38,10 @@
 		81CF18A0A795A21A18CD0E2C /* Pods-tinderClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinderClone.debug.xcconfig"; path = "Target Support Files/Pods-tinderClone/Pods-tinderClone.debug.xcconfig"; sourceTree = "<group>"; };
 		84023FA724824248009705C5 /* NewUserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserRegisterViewController.swift; sourceTree = "<group>"; };
 		84023FA924825043009705C5 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		8442DAA2248B704600DF3DC0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8442DAA4248B70CB00DF3DC0 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		8442DAA5248B70CB00DF3DC0 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		8442DAA8248B7B2800DF3DC0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		84595A1B2480E8C200852C66 /* tinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84595A1E2480E8C200852C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84595A202480E8C200852C66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +51,9 @@
 		84595A2D2480E8C400852C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84595A2F2480E8C400852C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84595A352480EB9E00852C66 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		845EA3CA248AB6030069E303 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		845EA3CE248AB9DF0069E303 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
+		845EA3CF248AB9DF0069E303 /* ChatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsTableViewCell.xib; sourceTree = "<group>"; };
 		84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenViewController.swift; sourceTree = "<group>"; };
 		84A36AE6248638D90035DD3E /* UsersShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersShown.swift; sourceTree = "<group>"; };
 		84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualGradientButton.swift; sourceTree = "<group>"; };
@@ -107,6 +121,7 @@
 				84023FA924825043009705C5 /* DatabaseHelper.swift */,
 				84A36AE6248638D90035DD3E /* UsersShown.swift */,
 				84BF7A1F248960A3000771CA /* SwipeScreenVCExtension.swift */,
+				8442DAA8248B7B2800DF3DC0 /* Message.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -115,6 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				84595A242480E8C200852C66 /* Main.storyboard */,
+				845EA3CE248AB9DF0069E303 /* ChatsTableViewCell.swift */,
+				845EA3CF248AB9DF0069E303 /* ChatsTableViewCell.xib */,
+				8442DAA4248B70CB00DF3DC0 /* MessageCell.swift */,
+				8442DAA5248B70CB00DF3DC0 /* MessageCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -127,6 +146,8 @@
 				84BE9C6C248180600083DBAB /* PhoneNumberVerificationViewController.swift */,
 				84023FA724824248009705C5 /* NewUserRegisterViewController.swift */,
 				84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */,
+				845EA3CA248AB6030069E303 /* ChatsViewController.swift */,
+				8442DAA2248B704600DF3DC0 /* ChatViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -208,6 +229,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845EA3D1248AB9DF0069E303 /* ChatsTableViewCell.xib in Resources */,
+				8442DAA7248B70CB00DF3DC0 /* MessageCell.xib in Resources */,
 				84595A2E2480E8C400852C66 /* LaunchScreen.storyboard in Resources */,
 				84FB9E222480FBA700134B6E /* GoogleService-Info.plist in Resources */,
 				84595A2B2480E8C400852C66 /* Assets.xcassets in Resources */,
@@ -265,15 +288,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				84595A1F2480E8C200852C66 /* AppDelegate.swift in Sources */,
+				845EA3D0248AB9DF0069E303 /* ChatsTableViewCell.swift in Sources */,
+				8442DAA3248B704600DF3DC0 /* ChatViewController.swift in Sources */,
+				8442DAA9248B7B2800DF3DC0 /* Message.swift in Sources */,
 				84BE9C6D248180600083DBAB /* PhoneNumberVerificationViewController.swift in Sources */,
 				84595A212480E8C200852C66 /* SceneDelegate.swift in Sources */,
 				84A36AE524862F2B0035DD3E /* SwipeScreenViewController.swift in Sources */,
+				845EA3CB248AB6030069E303 /* ChatsViewController.swift in Sources */,
 				84A36AE7248638D90035DD3E /* UsersShown.swift in Sources */,
 				84023FA824824248009705C5 /* NewUserRegisterViewController.swift in Sources */,
 				84BE9C6B2481301C0083DBAB /* LoginWithPhoneNumberViewController.swift in Sources */,
 				84BE9C70248186F80083DBAB /* UIViewControllerExtension.swift in Sources */,
 				84023FAA24825043009705C5 /* DatabaseHelper.swift in Sources */,
 				84BE9C6724812A3A0083DBAB /* ActualGradientButton.swift in Sources */,
+				8442DAA6248B70CB00DF3DC0 /* MessageCell.swift in Sources */,
 				84BF7A20248960A3000771CA /* SwipeScreenVCExtension.swift in Sources */,
 				84595A362480EB9E00852C66 /* LoginViewController.swift in Sources */,
 				84595A292480E8C200852C66 /* tinderClone.xcdatamodeld in Sources */,

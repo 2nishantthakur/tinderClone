@@ -183,7 +183,7 @@ class NewUserRegisterViewController: UIViewController ,UIImagePickerControllerDe
 //                                }
 //                            }
 //                        }
-                        self.db.collection("users").addDocument(data: ["name": self.name, "age": age, "gender": self.gender, "imageURL": self.imageURL, "uid": Auth.auth().currentUser?.uid]) { (error) in
+                        self.db.collection("users").document((Auth.auth().currentUser?.uid)!).setData(["name": self.name, "age": age, "gender": self.gender, "imageURL": self.imageURL, "uid": Auth.auth().currentUser?.uid], merge: true) { (error) in
                             if error != nil{
                                 print(error)
                                 
@@ -193,6 +193,16 @@ class NewUserRegisterViewController: UIViewController ,UIImagePickerControllerDe
                                 self.navigationController?.pushViewController(swipeVC!, animated: true)
                             }
                         }
+//                        self.db.collection("users").addDocument(data: ["name": self.name, "age": age, "gender": self.gender, "imageURL": self.imageURL, "uid": Auth.auth().currentUser?.uid]) { (error) in
+//                            if error != nil{
+//                                print(error)
+//
+//                            }else{
+//                                print("Successfully Added Data")
+//                                let swipeVC = self.storyboard?.instantiateViewController(identifier: "SwipeScreenViewController") as? SwipeScreenViewController
+//                                self.navigationController?.pushViewController(swipeVC!, animated: true)
+//                            }
+//                        }
                         
                     }
                     else{
