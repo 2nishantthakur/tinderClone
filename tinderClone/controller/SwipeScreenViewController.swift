@@ -9,8 +9,21 @@
 import UIKit
 import Firebase
 
+class HighlightedButton: UIButton {
+
+    override var isHighlighted: Bool {
+        didSet {
+            tintColor = isHighlighted ? .red : .white
+            
+        }
+    }
+}
+
 class SwipeScreenViewController: UIViewController {
     
+    @IBOutlet var bottomCardView: UIView!
+    @IBOutlet var topCardView: UIView!
+    @IBOutlet var lookingForUsersLbl: UILabel!
     @IBOutlet var imageShown: UIImageView!
     @IBOutlet var dislikeButton: UIButton!
     @IBOutlet var likeButton: UIButton!
@@ -20,6 +33,7 @@ class SwipeScreenViewController: UIViewController {
     @IBOutlet var secondUserShownImage: UIImageView!
     @IBOutlet var secondUserShownName: UILabel!
     @IBOutlet var secondUserShownAge: UILabel!
+    @IBOutlet var showProfile: UIButton!
     
     var usersShown = [UsersShown]()
     let db = Firestore.firestore()
@@ -28,6 +42,7 @@ class SwipeScreenViewController: UIViewController {
     var image = UIImage()
     var shownUserIndex = 1
     var currentUserLikes = [String: Int]()
+    var temp = 0
     
     var users = [[String(), Int(), UIImage(), String()]]
     
@@ -39,7 +54,7 @@ class SwipeScreenViewController: UIViewController {
         loadUsersToShow()
         dislikeButton.layer.cornerRadius = dislikeButton.frame.height/2
         likeButton.imageView?.layer.cornerRadius = dislikeButton.layer.cornerRadius
-
+        
         // Do any additional setup after loading the view.
     }
     func loadUsersToShow(){
@@ -67,10 +82,11 @@ class SwipeScreenViewController: UIViewController {
                                     return
                                 }
                                 DispatchQueue.main.async {
-                                   // self.image = UIImage(data: imageData!)!
+                                    // self.image = UIImage(data: imageData!)!
                                     if (LoginViewController.GlobalVariable.currentUserGender == "M" && data["gender"] as? String == "F") || (LoginViewController.GlobalVariable.currentUserGender == "F" && data["gender"] as? String == "M"){
                                         self.users.append([data["name"] as? String, data["age"] as? Int, UIImage(data: imageData!)!, data["uid"] as? String])
                                         if self.users.count == 2{
+                                            self.lookingForUsersLbl.text = ""
                                             self.imageShown.image = self.users[1][2] as! UIImage
                                             self.shownUserAge.text = String(self.users[1][1] as! Int)
                                             self.shownUserName.text = self.users[1][0] as! String
@@ -92,22 +108,64 @@ class SwipeScreenViewController: UIViewController {
                     
                     
                     
-//                    myGroup.notify(queue: queue) {
-//
-//                    }
+                    //                    myGroup.notify(queue: queue) {
+                    //
+                    //                    }
                     
                 }
             }
         }
     }
     @IBAction func dislikeButton(_ sender: UIButton) {
-        print(users.count)
-        print(users)
+        
+        shownNextCard()
+        if let card = topCardView{
+            myGroup.enter()
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.3) {
+                    card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 60)
+                    card.alpha = 0
+                    self.myGroup.leave()
+                }
+                return
+            }
+            myGroup.notify(queue: .main) {
+                self.getFirstCardBackToCenter(card: card)
+            }
+        }
+        
     }
     @IBAction func likeButton(_ sender: UIButton) {
+        
+        if shownUserIndex == users.count - 1{
+            temp = temp + 1
+        }
+        if temp < 2{
+            
+            shownNextCard()
+            if let card = topCardView{
+                myGroup.enter()
+                DispatchQueue.main.async {
+                    self.likeThisUser(UID: self.users[self.shownUserIndex][3] as! String, Name: self.users[self.shownUserIndex][0] as! String)
+                    UIView.animate(withDuration: 0.3) {
+                        card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 60)
+                        card.alpha = 0
+                        self.myGroup.leave()
+                    }
+                    return
+                }
+                myGroup.notify(queue: .main) {
+                    self.getFirstCardBackToCenter(card: card)
+                    
+                }
+            }
+            
+        }
+        
     }
     
     @IBAction func showProfile(_ sender: Any) {
+        showProfile.tintColor = .green
     }
     @IBAction func chats(_ sender: Any) {
         let chatsVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatsViewController") as? ChatsViewController
@@ -115,14 +173,8 @@ class SwipeScreenViewController: UIViewController {
     }
     
     @IBAction func swipeGesture(_ sender: UIPanGestureRecognizer) {
-        let queue = DispatchQueue(label: "first")
-        if users.count <= shownUserIndex+1{
-            secondUserShownImage.image = #imageLiteral(resourceName: "noMoreUsersToShow")
-        }else{
-            secondUserShownImage.image = users[shownUserIndex + 1][2] as! UIImage
-            secondUserShownAge.text = String(users[shownUserIndex + 1][1] as! Int)
-            secondUserShownName.text = users[shownUserIndex + 1][0] as! String
-        }
+        // let queue = DispatchQueue(label: "first")
+        shownNextCard()
         let card = sender.view!
         let point = sender.translation(in: view)
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
@@ -157,24 +209,12 @@ class SwipeScreenViewController: UIViewController {
             
             
             UIView.animate(withDuration: 0.2, animations: {
-//                card.center = self.view.center
+                //                card.center = self.view.center
                 self.thumbImageView.alpha = 0
-
+                
             })
             myGroup.notify(queue: .main) {
-                if self.users.count <= self.shownUserIndex+1{
-                    self.secondUserShownImage.image = #imageLiteral(resourceName: "noMoreUsersToShow")
-                }else{
-                    self.imageShown.image = self.users[self.shownUserIndex + 1][2] as! UIImage
-                    self.shownUserAge.text = String(self.users[self.shownUserIndex + 1][1] as! Int)
-                    self.shownUserName.text = self.users[self.shownUserIndex + 1][0] as! String
-                    self.shownUserIndex += 1
-                    sleep(1)
-                    
-                    card.center = self.view.center
-                    card.alpha = 1
-                }
-                
+                self.getFirstCardBackToCenter(card: card)
             }
             
         }
@@ -189,14 +229,37 @@ class SwipeScreenViewController: UIViewController {
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func shownNextCard(){
+        if users.count <= shownUserIndex+1{
+            secondUserShownImage.image = #imageLiteral(resourceName: "noMoreUsersToShow")
+        }else{
+            secondUserShownImage.image = users[shownUserIndex + 1][2] as! UIImage
+            secondUserShownAge.text = String(users[shownUserIndex + 1][1] as! Int)
+            secondUserShownName.text = users[shownUserIndex + 1][0] as! String
+        }
     }
-    */
-
+    func getFirstCardBackToCenter(card: UIView){
+        if self.users.count <= self.shownUserIndex+1{
+            self.secondUserShownImage.image = #imageLiteral(resourceName: "noMoreUsersToShow")
+        }else{
+            self.imageShown.image = self.users[self.shownUserIndex + 1][2] as! UIImage
+            self.shownUserAge.text = String(self.users[self.shownUserIndex + 1][1] as! Int)
+            self.shownUserName.text = self.users[self.shownUserIndex + 1][0] as! String
+            self.shownUserIndex += 1
+            sleep(1)
+            
+            card.center = self.view.center
+            card.alpha = 1
+        }
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

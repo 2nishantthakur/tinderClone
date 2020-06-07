@@ -99,15 +99,26 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource{
         cell.label.text = message.messageBody
         print(message.reciever)
         if message.sender == Auth.auth().currentUser?.uid && message.reciever == recieverUID{
+            cell.leftCornerView.isHidden = true
+            cell.rightCornerView.isHidden = false
             cell.otherUserImage.isHidden = true
             cell.label.textAlignment = .right
             cell.messageBubble.backgroundColor = UIColor(named: "skyBlue")
             cell.label.textColor = UIColor.white
+            cell.rightCornerView.backgroundColor = UIColor(named: "skyBlue")
+            
+            
         }else if message.reciever == Auth.auth().currentUser?.uid && message.sender == recieverUID{
+            cell.rightCornerView.isHidden = true
+            cell.leftCornerView.isHidden = false
             cell.otherUserImage.isHidden = false
             cell.otherUserImage.image = image.image
             cell.messageBubble.backgroundColor = UIColor.lightGray
             cell.label.textColor = UIColor.black
+            cell.label.textAlignment = .left
+            cell.leftCornerView.backgroundColor = UIColor.lightGray
+            //let width = estimateFrameForText(message.messageBody).width + 20
+            //cell.messageBubble.widthAnchor.constraint(equalToConstant: width).isActive = true
         }
         cell.backgroundColor = .clear
         return cell
@@ -116,5 +127,12 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource{
         return UITableView.automaticDimension
     }
     
+    
+//    func estimateFrameForText(_ text: String) -> CGRect {
+//        let size = CGSize(width: 250, height: 1000)
+//        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+//        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont(name:"OpenSans",size:15)!], context: nil)
+//    }
+//    NSFontAttributeName:self.yourLabel.font
     
 }

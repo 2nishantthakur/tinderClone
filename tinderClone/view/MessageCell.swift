@@ -10,6 +10,8 @@ import UIKit
 
 class MessageCell: UITableViewCell {
   
+    @IBOutlet var rightCornerView: UIView!
+    @IBOutlet var leftCornerView: UIView!
     @IBOutlet var messageBubble: UIView!
     @IBOutlet var label: UILabel!
     @IBOutlet var otherUserImage: UIImageView!
@@ -17,6 +19,7 @@ class MessageCell: UITableViewCell {
         super.awakeFromNib()
         messageBubble.layer.cornerRadius = messageBubble.frame.height / 5
         otherUserImage.layer.cornerRadius = otherUserImage.frame.width / 2
+        
         // Initialization code
     }
 
