@@ -23,6 +23,7 @@
 		845EA3CB248AB6030069E303 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3CA248AB6030069E303 /* ChatsViewController.swift */; };
 		845EA3D0248AB9DF0069E303 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3CE248AB9DF0069E303 /* ChatsTableViewCell.swift */; };
 		845EA3D1248AB9DF0069E303 /* ChatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EA3CF248AB9DF0069E303 /* ChatsTableViewCell.xib */; };
+		8480E2DC248D5AA500156B9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8480E2DB248D5AA500156B9E /* GoogleService-Info.plist */; };
 		84A36AE524862F2B0035DD3E /* SwipeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */; };
 		84A36AE7248638D90035DD3E /* UsersShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36AE6248638D90035DD3E /* UsersShown.swift */; };
 		84BE9C6724812A3A0083DBAB /* ActualGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */; };
@@ -31,7 +32,6 @@
 		84BE9C70248186F80083DBAB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE9C6F248186F80083DBAB /* UIViewControllerExtension.swift */; };
 		84BF7A20248960A3000771CA /* SwipeScreenVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF7A1F248960A3000771CA /* SwipeScreenVCExtension.swift */; };
 		84E1111B248D149A00D29B0F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1111A248D149A00D29B0F /* ProfileViewController.swift */; };
-		84FB9E222480FBA700134B6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FB9E212480FBA700134B6E /* GoogleService-Info.plist */; };
 		86DF0FD3E06B2A3FB8A39CBD /* Pods_tinderClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC605B58301952D080151A2 /* Pods_tinderClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +55,7 @@
 		845EA3CA248AB6030069E303 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		845EA3CE248AB9DF0069E303 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
 		845EA3CF248AB9DF0069E303 /* ChatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsTableViewCell.xib; sourceTree = "<group>"; };
+		8480E2DB248D5AA500156B9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84A36AE424862F2B0035DD3E /* SwipeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenViewController.swift; sourceTree = "<group>"; };
 		84A36AE6248638D90035DD3E /* UsersShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersShown.swift; sourceTree = "<group>"; };
 		84BE9C6624812A3A0083DBAB /* ActualGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualGradientButton.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		84BE9C6F248186F80083DBAB /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		84BF7A1F248960A3000771CA /* SwipeScreenVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScreenVCExtension.swift; sourceTree = "<group>"; };
 		84E1111A248D149A00D29B0F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		84FB9E212480FBA700134B6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A17F601CA72E3F4CF276E04 /* Pods-tinderClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinderClone.release.xcconfig"; path = "Target Support Files/Pods-tinderClone/Pods-tinderClone.release.xcconfig"; sourceTree = "<group>"; };
 		9FC605B58301952D080151A2 /* Pods_tinderClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tinderClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,8 +108,8 @@
 				84595A392480EBD100852C66 /* controller */,
 				84595A2A2480E8C400852C66 /* Assets.xcassets */,
 				84595A2C2480E8C400852C66 /* LaunchScreen.storyboard */,
-				84FB9E212480FBA700134B6E /* GoogleService-Info.plist */,
 				84595A2F2480E8C400852C66 /* Info.plist */,
+				8480E2DB248D5AA500156B9E /* GoogleService-Info.plist */,
 				84595A272480E8C200852C66 /* tinderClone.xcdatamodeld */,
 			);
 			path = tinderClone;
@@ -235,9 +235,9 @@
 				845EA3D1248AB9DF0069E303 /* ChatsTableViewCell.xib in Resources */,
 				8442DAA7248B70CB00DF3DC0 /* MessageCell.xib in Resources */,
 				84595A2E2480E8C400852C66 /* LaunchScreen.storyboard in Resources */,
-				84FB9E222480FBA700134B6E /* GoogleService-Info.plist in Resources */,
 				84595A2B2480E8C400852C66 /* Assets.xcassets in Resources */,
 				84595A262480E8C200852C66 /* Main.storyboard in Resources */,
+				8480E2DC248D5AA500156B9E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
